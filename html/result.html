@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=920, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>中国公益组织互联网使用与传播能力第六次调研，填写者得20元红包</title>
+    <link rel="stylesheet" href="layui/layui.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="./favicon.ico">
+    <style>
+        html, body { height: 100%;}
+        .container { min-height: 100%}
+    </style>
+</head>
+<body>
+<article class="container">
+    <header id="header">
+        <div class="logo bgi" style="background-image: url(img/logo.png);background-size:600px"></div>
+        <h1>中国公益组织互联网使用与传播能力第六次调研</h1>
+        <p style="font-size: 32px;color: #009688;"><span id='orgName'></span>，已成功提交问卷，请及时截图。</p>
+        <p style="font-size: 32px;color: #009688;">同时关注微信公号：ngo20china，并发送截图，获取微信红包。</p>
+	<div style="text-align:center"><img src="img/qrcode.jpg"></div>
+        <p style="font-size: 32px;color: #009688;"><span id='orgName'></span>欢迎分享问卷，最终调研结果请登录NGO2.0官网了解。</p>
+    </header>
+</article>
+<script>
+    var parts = location.search.slice(1).split('&');
+    for (var i = 0; i < parts.length; i++) {
+        var pair = parts[i].split('=');
+        if (pair[0] == 'orgName') {
+            document.getElementById("orgName").textContent = pair[1] ? decodeURIComponent(pair[1]) : '';
+            break;
+        } 
+    }
+</script>
+</body>
+</html>

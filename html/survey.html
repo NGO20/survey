@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=920, user-scalable=no, target-densitydpi=device-dpi">
+    <title>调研问卷</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="./favicon.ico">
+</head>
+<body>
+<article class="container">
+    <header id="header">
+        <div class="logo bgi" style="background-image: url('img/logo.png');background-size: 600px"></div>
+        <h1>中国公益组织互联网使用与传播能力第六次调研</h1>
+        <h2>请贵组织的主要负责人填写本问卷。</h2>
+    </header>
+
+    <section id="questionnaire">
+
+        <div class="title" style="background: #f4f4f4;"><p style="font-weight: 700">继续填写问卷</p></div>
+        <form id="surveyForm" class="layui-form clearfix" action="/api/updateSurvey" method="post">
+            <input id="surveyId" type="hidden" name="id">
+            <div class="layui-form-item" lay-verify="checkGroup">
+                <div class="title"><p>21.贵组织互联网（包括移动互联网）使用受到限制的最主要因素是：</p></div>
+                <ul class="box">
+                    <li><input type="radio" name="internetLimiting" value="未受到限制" title="未受到限制"></li>
+                    <li><input type="radio" name="internetLimiting" value="缺乏硬件（如办公地点、电脑、手机设备）"
+                               title="缺乏硬件（如办公地点、电脑、手机设备）"></li>
+                    <li><input type="radio" name="internetLimiting" value="网络不稳定" title="网络不稳定"></li>
+                    <li><input type="radio" name="internetLimiting" value="缺乏上网的技能" title="缺乏上网的技能"></li>
+                    <li><input type="radio" name="internetLimiting" value="缺少互联网专业人员" title="缺少互联网专业人员"></li>
+                    <li><input type="radio" name="internetLimiting" value="组织管理人员不重视使用互联网" title="组织管理人员不重视使用互联网"></li>
+                    <li>
+                        <input type="radio" name="internetLimiting" value="其他" title="其他">
+                        <div class="layui-input-inline float-disable" >
+                            <input type="text" name="internetLimitingExt" placeholder="请填写原因" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="layui-form-item" lay-verify="checkGroup">
+                <div class="title"><p>22.贵组织对互联网使用的最大需求是：</p></div>
+                <ul class="box">
+                    <li><input type="radio" name="internetDemand" value="提供计算机基础培训（如键盘输入、文档建立等）"
+                               title="提供计算机基础培训（如键盘输入、文档建立等）"></li>
+                    <li><input type="radio" name="internetDemand" value="提供计算机软件使用培训（例如使用QQ、微信、视频制作软件等等）"
+                               title="提供计算机软件使用培训（例如使用QQ、微信、视频制作软件等等）"></li>
+                    <li><input type="radio" name="internetDemand" value="提供互联网传播策略培训（例如微信公众号、微博运营等等）"
+                               title="提供互联网传播策略培训（例如微信公众号、微博运营等等）"></li>
+                    <li><input type="radio" name="internetDemand" value="提供网站、应用、移动应用或管理系统开发服务"
+                               title="提供网站、应用、移动应用或管理系统开发服务"></li>
+                    <li><input type="radio" name="internetDemand" value="提供移动应用开发服务" title="提供移动应用开发服务"></li>
+                    <li><input type="radio" name="internetDemand" value="捐助计算机、移动终端等设备" title="捐助计算机、移动终端等设备"></li>
+                    <li>
+                        <input type="radio" name="internetDemand" value="其他" title="其他">
+                        <div class="layui-input-inline float-disable">
+                            <input type="text" name="internetDemandExt" placeholder="请填写原因" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="layui-form-item limit-checkbox-gruop" data-check-limit="3" lay-verify="checkGroup">
+                <div class="title"><p>23.贵组织和服务对象最常用的沟通方式是：（最多三项）</p></div>
+                <ul class="box box-list">
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="面对面沟通" title="面对面沟通" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="电话联系" title="电话联系" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="手机短信" title="手机短信" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="外展（如制作展位、发传单）" title="外展（如制作展位、发传单）" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="电子邮件" title="电子邮件" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="QQ" title="QQ" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="微信" title="微信" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="微博" title="微博" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="微信公众号" title="微信公众号" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="官方网站" title="官方网站" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="移动APP" title="移动APP" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commCustomerMethods[]" value="网络直播" title="网络直播" lay-skin="primary"></li>
+                </ul>
+            </div>
+
+            <div class="layui-form-item limit-checkbox-gruop" data-check-limit="3" lay-verify="checkGroup">
+                <div class="title"><p>24.贵组织和志愿者最常用的沟通方式是：（最多三项）</p></div>
+                <ul class="box box-list">
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="面对面沟通" title="面对面沟通" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="电话联系" title="电话联系" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="手机短信" title="手机短信" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="外展（如制作展位、发传单）" title="外展（如制作展位、发传单）" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="电子邮件" title="电子邮件" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="QQ" title="QQ" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="微信" title="微信" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="微博" title="微博" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="微信公众号" title="微信公众号" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="官方网站" title="官方网站" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="移动APP" title="移动APP" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="commVolunteerMethods[]" value="网络直播" title="网络直播" lay-skin="primary"></li>
+                </ul>
+            </div>
+
+
+            <div class="layui-form-item composite-question" lay-verify="checkGroup">
+                <div class="title"><p>25.贵组织在2017年内发起过多少次众筹：</p></div>
+                <ul class="box box-list">
+                    <li>
+		         <input type="radio" name="hasCrowdfunding" value="0" title="未发起众筹项目">
+                    </li>
+                    <li>
+                        <input type="radio" name="hasCrowdfunding" value="1" title="发起过">
+                        <div class="layui-input-inline float-disable" >
+                            <input type="text" name="crowdfundingCount" placeholder="请填写次数" autocomplete="off" class="layui-input" onkeyup="clearNoNum(this)">
+                        </div> 次 </li> 
+                </ul>
+             </div>
+
+
+            <div class="layui-form-item mutex-checkbox-group subquestion" lay-verify="checkGroup" style="display:none">
+                <div class="title"><p>25.1 贵组织众筹（在线筹款/线下募捐）最常用哪个平台？</p></div>
+                <ul class="box box-list">
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="线下捐款" title="线下捐款" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="腾讯公益平台" title="腾讯公益平台" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="新浪微公益" title="新浪微公益" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="淘宝" title="淘宝" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="众筹网" title="众筹网" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="轻松筹" title="轻松筹" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="crowdfundingPlatform[]" value="灵析" title="灵析" lay-skin="primary"></li>
+                    <li>
+                        <input type="checkbox" name="crowdfundingPlatform[]" value="其他平台" title="其他平台" lay-skin="primary">
+                        <div class="layui-input-inline float-disable">
+                            <input type="text" name="crowdfundingPlatformExt"  placeholder="请填写平台名称"
+                                   autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="layui-form-item subquestion" style="display:none">
+                <div class="title"><p>25.2 贵组织最成功的众筹项目的名称是：</p></div>
+                <div class="box">
+                    <label class="layui-form-label">项目名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="crowdfundingProject"  placeholder="项目名称"
+                               autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item subquestion" style="display:none">
+                <div class="title"><p>25.3 组织通过众筹所得金额总数为多少元：</p></div>
+                <div class="box">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">金额</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="crowdfundingAmount" placeholder="只能输入数字"
+                                   autocomplete="off" class="layui-input" onkeyup="clearNoNum(this)">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">元</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="clearfix box-table">
+                <div class="title"><p>26.请评估贵组织2018年传播战略各个选项的重要程度：</p></div>
+
+                <ul class="box-table-list box-th col-5">
+                    <li>战略名称</li>
+                    <li>非常不重要</li>
+                    <li>不重要</li>
+                    <li>一般</li>
+                    <li>重要</li>
+                    <li>非常重要</li>
+                </ul>
+
+
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">经营我们的社区</li>
+                        <li><input type="radio" name="communityLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="communityLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="communityLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="communityLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="communityLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title"><div class="multiline-block" style="width:80%;">建立组织的行业专家地位</div></li>
+                        <li><input type="radio" name="expertLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="expertLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="expertLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="expertLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="expertLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">争取新的志愿者</li>
+                        <li><input type="radio" name="newVolunteerLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="newVolunteerLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="newVolunteerLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="newVolunteerLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="newVolunteerLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">维护已有志愿者</li>
+                        <li><input type="radio" name="oldVolunteerLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="oldVolunteerLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="oldVolunteerLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="oldVolunteerLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="oldVolunteerLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">建立组织和项目品牌</li>
+                        <li><input type="radio" name="buildingBrandLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="buildingBrandLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="buildingBrandLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="buildingBrandLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="buildingBrandLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title"><div class="multiline-block" style="width:80%;">维护组织现有服务对象</div></li>
+                        <li><input type="radio" name="oldCustomerLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="oldCustomerLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="oldCustomerLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="oldCustomerLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="oldCustomerLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">争取新的捐赠者</li>
+                        <li><input type="radio" name="newFundSourceLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="newFundSourceLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="newFundSourceLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="newFundSourceLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="newFundSourceLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">维护当前捐赠者</li>
+                        <li><input type="radio" name="oldFundSourceLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="oldFundSourceLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="oldFundSourceLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="oldFundSourceLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="oldFundSourceLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title"><div class="multiline-block" style="width:80%;">提升组织互联网宣传的浏览量</div></li>
+                        <li><input type="radio" name="orgWebLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="orgWebLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="orgWebLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="orgWebLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="orgWebLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-5">
+                        <li class="title">运营微信账号</li>
+                        <li><input type="radio" name="opWechatLevel" value="非常不重要" title=" "></li>
+                        <li><input type="radio" name="opWechatLevel" value="不重要" title=" "></li>
+                        <li><input type="radio" name="opWechatLevel" value="一般" title=" "></li>
+                        <li><input type="radio" name="opWechatLevel" value="重要" title=" "></li>
+                        <li><input type="radio" name="opWechatLevel" value="非常重要" title=" "></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item" lay-verify="checkGroup">
+                <div class="title"><p>27.以下表述最符合贵组织有关于2018年的营销或传播计划的说法是</p></div>
+                <ul class="box box-list">
+
+                    <li><input type="radio" name="prPlan" value="制定了2018年计划并已在团队通过" title="制定了2018年计划并已在团队通过"></li>
+                    <li><input type="radio" name="prPlan" value="仅制定了2018年计划，没有与团队讨论" title="仅制定了2018年计划，没有与团队讨论"></li>
+                    <li><input type="radio" name="prPlan" value="没有正式的计划，仅有些要点" title="没有正式的计划，仅有些要点"></li>
+                    <li><input type="radio" name="prPlan" value="继续执行2017年的营销或传播活动" title="继续执行2017年的营销或传播活动"></li>
+                    <li><input type="radio" name="prPlan" value="仅有些想法" title="仅有些想法"></li>
+                    <li><input type="radio" name="prPlan" value="不知道" title="不知道"></li>
+                </ul>
+            </div>
+
+
+            <div class="layui-form-item limit-checkbox-gruop" data-check-limit="3" lay-verify="checkGroup">
+                <div class="title"><p>28.以下哪三种将是2018年度贵组织最重要的传播渠道？（限选三项）</p></div>
+                <ul class="box box-list" style="padding:0;">
+                    <li><input type="checkbox" name="prChannel[]" value="面对面传播" title="面对面传播" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="传统媒体（报刊杂志电视等）" title="传统媒体（报刊杂志电视等）" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="行业网络媒体（NGOCN、中国发展简报等）" title="行业网络媒体（NGOCN、中国发展简报等）" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="官方网站" title="官方网站" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="群发电子邮件" title="群发电子邮件" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="电子简报" title="电子简报" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="微博 " title="微博 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="QQ和QQ群 " title="QQ和QQ群 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="微信公众号 " title="微信公众号 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="微信和微信群 " title="微信和微信群 " lay-skin="primary"></li>
+                </ul>
+                <ul class="box box-list" style="padding:0;">
+                    <li><input type="checkbox" name="prChannel[]" value="头条号 " title="头条号 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="组织自有应用APP " title="组织自有应用APP " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="网络直播" title="网络直播" lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="视频制作 " title="视频制作 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="电话联系 " title="电话联系 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="手机短信 " title="手机短信 " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="外展（制作展位、传单等） " title="外展（制作展位、传单等） " lay-skin="primary"></li>
+                    <li><input type="checkbox" name="prChannel[]" value="工作坊（沙龙、论坛、讲座等地面活动形式） " title="工作坊（沙龙、论坛、讲座等地面活动形式） " lay-skin="primary"></li>
+                    <li>
+                        <input type="checkbox" name="prChannel" value="其他" title="其他 " lay-skin="primary">
+                        <div class="layui-input-inline float-disable">
+                            <input type="text" name="prChannelExt" placeholder="请注明" autocomplete="off" class="layui-input">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="clearfix box-table">
+                <div class="title"><p>29.贵组织在2017年是否从事过以下活动？</p></div>
+
+                <ul class="box-table-list box-th col-3">
+                    <li>活动名称</li>
+                    <li>是</li>
+                    <li>否</li>
+                </ul>
+
+
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title"><div class="multiline-block">建立志愿者管理系统（如灵析、志多星、麦客CRM、今目标或定制开发等）</div></li>
+                        <li><input type="radio" name="misVolunteer" value="1" title=" "></li>
+                        <li><input type="radio" name="misVolunteer" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">建立服务对象管理系统</li>
+                        <li><input type="radio" name="misCustomer" value="1" title=" "></li>
+                        <li><input type="radio" name="misCustomer" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">建立捐赠者管理系统</li>
+                        <li><input type="radio" name="misFund" value="1" title=" "></li>
+                        <li><input type="radio" name="misFund" value="0" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">本组织在互联网上有分享公共资料的地方（如百度云盘等）</li>
+                        <li><input type="radio" name="cloudDirve" value="1" title=" "></li>
+                        <li><input type="radio" name="cloudDirve" value="0" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">使用项目管理工具进行项目管理（如Tower、钉钉等）</li>
+                        <li><input type="radio" name="misProject" value="1" title=" "></li>
+                        <li><input type="radio" name="misProject" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">订阅了同行的电子简报</li>
+                        <li><input type="radio" name="newsletterSub" value="1" title=" "></li>
+                        <li><input type="radio" name="newsletterSub" value="0" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">关注了其他公益组织的微信公众号</li>
+                        <li><input type="radio" name="wechatSub" value="1" title=" "></li>
+                        <li><input type="radio" name="wechatSub" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">在微博上关注了公益组织</li>
+                        <li><input type="radio" name="weiboSub" value="1" title=" "></li>
+                        <li><input type="radio" name="weiboSub" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">加入了公益组织QQ群/微信群</li>
+                        <li><input type="radio" name="groupMember" value="1" title=" "></li>
+                        <li><input type="radio" name="groupMember" value="0" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">通过互联网公开了工作目标、使命宣言</li>
+                        <li><input type="radio" name="announceAim" value="1" title=" "></li>
+                        <li><input type="radio" name="announceAim" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">有几家固定的媒体（包括报纸、电视、网络）合作伙伴</li>
+                        <li><input type="radio" name="hasPartner" value="1" title=" "></li>
+                        <li><input type="radio" name="hasPartner" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">通过互联网发布年度工作报告</li>
+                        <li><input type="radio" name="hasReport" value="1" title=" "></li>
+                        <li><input type="radio" name="hasReport" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-3">
+                        <li class="title">通过互联网发布年度规划或计划</li>
+                        <li><input type="radio" name="hasPlan" value="1" title=" "></li>
+                        <li><input type="radio" name="hasPlan" value="0" title=" "></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="clearfix box-table">
+                <div class="title"><p>30.请根据贵组织2017年的活动情况，在下表中选择合适的选项：</p></div>
+
+                <ul class="box-table-list box-th col-4">
+                    <li>活动名称</li>
+                    <li>从不</li>
+                    <li>很少</li>
+                    <li>有时</li>
+                    <li>经常</li>
+                </ul>
+
+
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">对官方网站数据进行分析（使用百度统计、站长网等工具）</li>
+                        <li><input type="radio" name="websiteAnalysis" value="从不" title=" "></li>
+                        <li><input type="radio" name="websiteAnalysis" value="很少" title=" "></li>
+                        <li><input type="radio" name="websiteAnalysis" value="有时" title=" "></li>
+                        <li><input type="radio" name="websiteAnalysis" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"> 对微博数据进行分析（使用微博后台、新榜、知微等工具）</li>
+                        <li><input type="radio" name="weiboAnalysis" value="从不" title=" "></li>
+                        <li><input type="radio" name="weiboAnalysis" value="很少" title=" "></li>
+                        <li><input type="radio" name="weiboAnalysis" value="有时" title=" "></li>
+                        <li><input type="radio" name="weiboAnalysis" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"> 对微信数据进行分析（使用微信后台、新榜、西瓜运营等工具）</li>
+                        <li><input type="radio" name="wechatAnalysis" value="从不" title=" "></li>
+                        <li><input type="radio" name="wechatAnalysis" value="很少" title=" "></li>
+                        <li><input type="radio" name="wechatAnalysis" value="有时" title=" "></li>
+                        <li><input type="radio" name="wechatAnalysis" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">
+                            <div class="multiline-block">对本组织的能力进行基于数据的分析（使用如NGO2.0地图评级、基金会中心网等工具）</div>
+                        </li>
+                        <li><input type="radio" name="orgAbilityAnalysis" value="从不" title=" "></li>
+                        <li><input type="radio" name="orgAbilityAnalysis" value="很少" title=" "></li>
+                        <li><input type="radio" name="orgAbilityAnalysis" value="有时" title=" "></li>
+                        <li><input type="radio" name="orgAbilityAnalysis" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"> 组织成员接受互联网技术培训</li>
+                        <li><input type="radio" name="stuffTraining" value="从不" title=" "></li>
+                        <li><input type="radio" name="stuffTraining" value="很少" title=" "></li>
+                        <li><input type="radio" name="stuffTraining" value="有时" title=" "></li>
+                        <li><input type="radio" name="stuffTraining" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"> 参与线上公益项目竞赛或公益创投</li>
+                        <li><input type="radio" name="attendOnlineVC" value="从不" title=" "></li>
+                        <li><input type="radio" name="attendOnlineVC" value="很少" title=" "></li>
+                        <li><input type="radio" name="attendOnlineVC" value="有时" title=" "></li>
+                        <li><input type="radio" name="attendOnlineVC" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"> 参加过（政府、企业）主办的项目展会、资源对接会</li>
+                        <li><input type="radio" name="attendResourcePairMeeting" value="从不" title=" "></li>
+                        <li><input type="radio" name="attendResourcePairMeeting" value="很少" title=" "></li>
+                        <li><input type="radio" name="attendResourcePairMeeting" value="有时" title=" "></li>
+                        <li><input type="radio" name="attendResourcePairMeeting" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">参与政府购买社会服务的在线招标项目</li>
+                        <li><input type="radio" name="attendBid" value="从不" title=" "></li>
+                        <li><input type="radio" name="attendBid" value="很少" title=" "></li>
+                        <li><input type="radio" name="attendBid" value="有时" title=" "></li>
+                        <li><input type="radio" name="attendBid" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"><div class="multiline-block">使用行业门户网站（NGO2.0地图、中国发展简报等）获取行业资源</div></li>
+                        <li><input type="radio" name="webNgoResource" value="从不" title=" "></li>
+                        <li><input type="radio" name="webNgoResource" value="很少" title=" "></li>
+                        <li><input type="radio" name="webNgoResource" value="有时" title=" "></li>
+                        <li><input type="radio" name="webNgoResource" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">通过网络社交媒体获取公众资源（如众筹、招募志愿者等）</li>
+                        <li><input type="radio" name="mediaPublicResource" value="从不" title=" "></li>
+                        <li><input type="radio" name="mediaPublicResource" value="很少" title=" "></li>
+                        <li><input type="radio" name="mediaPublicResource" value="有时" title=" "></li>
+                        <li><input type="radio" name="mediaPublicResource" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"><div class="multiline-block">使用时间协调工具安排工作日程（如Tower日历、朝夕日历、组队君等工具）</div></li>
+                        <li><input type="radio" name="onlineCalnader" value="从不" title=" "></li>
+                        <li><input type="radio" name="onlineCalnader" value="很少" title=" "></li>
+                        <li><input type="radio" name="onlineCalnader" value="有时" title=" "></li>
+                        <li><input type="radio" name="onlineCalnader" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">多人网络会议（如微信、QQ、钉钉等工具）</li>
+                        <li><input type="radio" name="onlineMetting" value="从不" title=" "></li>
+                        <li><input type="radio" name="onlineMetting" value="很少" title=" "></li>
+                        <li><input type="radio" name="onlineMetting" value="有时" title=" "></li>
+                        <li><input type="radio" name="onlineMetting" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"><div class="multiline-block">使用在线文档工具共同编辑文档（如石墨、OneNote、印象笔记等）</div></li>
+                        <li><input type="radio" name="onlineEditor" value="从不" title=" "></li>
+                        <li><input type="radio" name="onlineEditor" value="很少" title=" "></li>
+                        <li><input type="radio" name="onlineEditor" value="有时" title=" "></li>
+                        <li><input type="radio" name="onlineEditor" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">使用工作协作软件或网络平台完成项目管理（如钉钉、Tower等）</li>
+                        <li><input type="radio" name="onlineCollaboration" value="从不" title=" "></li>
+                        <li><input type="radio" name="onlineCollaboration" value="很少" title=" "></li>
+                        <li><input type="radio" name="onlineCollaboration" value="有时" title=" "></li>
+                        <li><input type="radio" name="onlineCollaboration" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"><div class="multiline-block">开网络会议时，使用屏幕分享工具（如QQ群屏幕分享、Joinme等）</div></li>
+                        <li><input type="radio" name="onlineScreenShare" value="从不" title=" "></li>
+                        <li><input type="radio" name="onlineScreenShare" value="很少" title=" "></li>
+                        <li><input type="radio" name="onlineScreenShare" value="有时" title=" "></li>
+                        <li><input type="radio" name="onlineScreenShare" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">接受过互联网技术培训的员工在组织内做分享</li>
+                        <li><input type="radio" name="trainingShare" value="从不" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="很少" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="有时" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">举办组织内部培训</li>
+                        <li><input type="radio" name="internalTraining" value="从不" title=" "></li>
+                        <li><input type="radio" name="internalTraining" value="很少" title=" "></li>
+                        <li><input type="radio" name="internalTraining" value="有时" title=" "></li>
+                        <li><input type="radio" name="internalTraining" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">通过网络工具收听、收集公众对我们的评价（如百度新闻订阅等）</li>
+                        <li><input type="radio" name="opinionAnalysis" value="从不" title=" "></li>
+                        <li><input type="radio" name="opinionAnalysis" value="很少" title=" "></li>
+                        <li><input type="radio" name="opinionAnalysis" value="有时" title=" "></li>
+                        <li><input type="radio" name="opinionAnalysis" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title"><div class="multiline-block">公益活动时进行直播</div></li>
+                        <li><input type="radio" name="publicity" value="从不" title=" "></li>
+                        <li><input type="radio" name="publicity" value="很少" title=" "></li>
+                        <li><input type="radio" name="publicity" value="有时" title=" "></li>
+                        <li><input type="radio" name="publicity" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">制做一些公益微电影或者微视频并已经上传到网上</li>
+                        <li><input type="radio" name="publicVideo" value="从不" title=" "></li>
+                        <li><input type="radio" name="publicVideo" value="很少" title=" "></li>
+                        <li><input type="radio" name="publicVideo" value="有时" title=" "></li>
+                        <li><input type="radio" name="publicVideo" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">大型公益活动时倡导参与式公益，进行微信、微博现场互动</li>
+                        <li><input type="radio" name="snInteract" value="从不" title=" "></li>
+                        <li><input type="radio" name="snInteract" value="很少" title=" "></li>
+                        <li><input type="radio" name="snInteract" value="有时" title=" "></li>
+                        <li><input type="radio" name="snInteract" value="经常" title=" "></li>
+                    </ul>
+                </div>
+
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">
+                            <div class="multiline-block">通过微博/微信公众号互动，分享公众日常参与公益活动的照片、感想</div>
+                        </li>
+                        <li><input type="radio" name="snShare" value="从不" title=" "></li>
+                        <li><input type="radio" name="snShare" value="很少" title=" "></li>
+                        <li><input type="radio" name="snShare" value="有时" title=" "></li>
+                        <li><input type="radio" name="snShare" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">访问公益行业信息网站</li>
+                        <li><input type="radio" name="visitNGOSite" value="从不" title=" "></li>
+                        <li><input type="radio" name="visitNGOSite" value="很少" title=" "></li>
+                        <li><input type="radio" name="visitNGOSite" value="有时" title=" "></li>
+                        <li><input type="radio" name="visitNGOSite" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">通过搜索引擎搜索行业信息</li>
+                        <li><input type="radio" name="usingSE" value="从不" title=" "></li>
+                        <li><input type="radio" name="usingSE" value="很少" title=" "></li>
+                        <li><input type="radio" name="usingSE" value="有时" title=" "></li>
+                        <li><input type="radio" name="usingSE" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">及时更新组织网站/微博/微信公众号</li>
+                        <li><input type="radio" name="ontimeWebUpdate" value="从不" title=" "></li>
+                        <li><input type="radio" name="ontimeWebUpdate" value="很少" title=" "></li>
+                        <li><input type="radio" name="ontimeWebUpdate" value="有时" title=" "></li>
+                        <li><input type="radio" name="ontimeWebUpdate" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">
+                            <div class="multiline-block"> 通过官方网站、微信、微博或社交网络等方式发布组织项目活动进展</div>
+                        </li>
+                        <li><input type="radio" name="snUpdateProjectInfo" value="从不" title=" "></li>
+                        <li><input type="radio" name="snUpdateProjectInfo" value="很少" title=" "></li>
+                        <li><input type="radio" name="snUpdateProjectInfo" value="有时" title=" "></li>
+                        <li><input type="radio" name="snUpdateProjectInfo" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">
+                            <div class="multiline-block">
+                                主动通过媒体（如头条号、微博头条号、NGOCN、发展简报、公益时报、当地报纸等）发布项目及活动信息
+                            </div>
+                        </li>
+                        <li><input type="radio" name="snPublish" value="从不" title=" "></li>
+                        <li><input type="radio" name="snPublish" value="很少" title=" "></li>
+                        <li><input type="radio" name="snPublish" value="有时" title=" "></li>
+                        <li><input type="radio" name="snPublish" value="经常" title=" "></li>
+                    </ul>
+                </div>
+
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">接受媒体（包括网络、报纸和电视）的邀稿或专访</li>
+                        <li><input type="radio" name="meidaInterview" value="从不" title=" "></li>
+                        <li><input type="radio" name="meidaInterview" value="很少" title=" "></li>
+                        <li><input type="radio" name="meidaInterview" value="有时" title=" "></li>
+                        <li><input type="radio" name="meidaInterview" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">在国外媒体上发布组织或活动信息</li>
+                        <li><input type="radio" name="foreignMedia" value="从不" title=" "></li>
+                        <li><input type="radio" name="foreignMedia" value="很少" title=" "></li>
+                        <li><input type="radio" name="foreignMedia" value="有时" title=" "></li>
+                        <li><input type="radio" name="foreignMedia" value="经常" title=" "></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="layui-form-item btn-group">
+                <div class="layui-input-block">
+                    <button type="submit" lay-filter="save" lay-submit class="layui-btn ">提交问卷</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+</article>
+
+
+<footer id="footer">
+    <p>设计方：NGO2.0（深圳市图鸥公益事业发展中心）/中国科学技术大学知识管理研究所 </p>
+</footer>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="layui/layui.js"></script>
+<script src="js/main.js"></script>
+
+<script src="https://cdn.bootcss.com/sisyphus.js/1.1.103/sisyphus.js"></script>
+<script>
+    $("#surveyForm" ).sisyphus({locationBased: true, timeout: 10});
+
+    var parts = location.search.slice(1).split('&');
+    for (var i = 0; i < parts.length; i++) {
+        var pair = parts[i].split('=');
+        if (pair[0] == 'id') {
+            $("#surveyId").val(pair[1]);
+            break;
+        } 
+    }
+    layui.use('form', function () {
+        var form = layui.form;
+    });
+
+    function clearNoNum(obj) {
+        obj.value = obj.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符
+        obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+        obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数
+        if (obj.value.indexOf(".") < 0 && obj.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+            obj.value = parseFloat(obj.value);
+        }
+    }
+</script>
+
+
+</html>

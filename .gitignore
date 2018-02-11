@@ -1,0 +1,18 @@
+# Intellij
+*.iml
+#.idea/workspace.xml
+.idea/**
+.gradle/**
+
+*/build/**
+
+out
+
+web/build/**
+
+#Apple
+.DS_Store
+
+#nodejs
+*/node_modules
+npm-debug.log

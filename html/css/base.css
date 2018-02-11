@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'microsoft yahei',arial sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+img {
+    outline: none;
+    border: none;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+code, kbd, pre, samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img ,input{
+    border: 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*侧边定位开始*/
+
+h1,h2,h3,h4,h5,h6{
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#sidebar {
+    position: fixed;
+    right: 50px;
+    top: 200px;
+    z-index: 99;
+    display: none;
+    transition: all 0.3s ease;
+    width: 140px;
+    background:rgba(128, 189 , 255 ,0.3 );
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius:10px;
+}
+
+
+#sidebar a {
+    display: inline-block;
+    padding: 12px 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+#sidebar a:hover {
+    color: #fff;
+}
+
+/*侧边定位结束*/
+
+
+
+.clearfix:after {
+     content: ".";
+     display: block;
+     height: 0;
+     clear: both;
+     visibility: hidden;
+ }
+.clearfix{
+    zoom:1;
+}
+
+

@@ -1,0 +1,228 @@
+.container {
+    width: 840px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 0 40px;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+body .layui-form-label {
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    width: 200px;
+    font-weight: 400;
+    text-align: right;
+}
+
+#questionnaire .layui-form-label {
+    float: left;
+    display: block;
+    padding: 9px 0px;
+    width: 100px;
+    font-weight: 400;
+    text-align: left;
+}
+
+body .layui-textarea {
+
+    width: 280px;
+    min-height: 60px;
+}
+
+.box {
+    padding: 0px 40px;
+    margin: 10px 0 20px;
+}
+
+.box-list {
+    padding-left: 40px;
+    margin-bottom: 20px;
+    float: left;
+    min-width: 320px;
+}
+
+.box li {
+
+}
+
+.box li > span {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.layui-table tr > th {
+    text-align: center
+}
+
+.layui-table tr {
+    background: none;
+}
+
+.layui-table tbody > tr:hover {
+    background: none;
+}
+
+.bgi {
+    display: block;
+    background: center center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.title {
+    /* height: 40px; */
+    background: rgba(16, 255, 74, 0.11);
+    line-height: 40px;
+    padding: 4px 20px;
+    margin-bottom: 10px;
+}
+
+.title > p {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#header > .logo {
+    height: 280px;
+}
+
+#header > h1 {
+    font-size: 30px;
+    margin: 20px 0 10px;
+}
+
+#header > p {
+    font-size: 16px;
+}
+
+#nav {
+    padding-bottom: 40px;
+}
+
+.col-5 > li:first-of-type {
+    width: 24%;
+}
+
+.col-5 > li {
+    width: 15%;
+}
+
+.col-3 > li:first-of-type {
+    width: 69%;
+    max-width: 545px;
+}
+
+.col-3 > li {
+    width: 15%;
+}
+
+.col-4 > li:first-of-type {
+    width: 67%;
+    max-width: 540px;
+}
+
+.col-4 > li {
+    width: 8%;
+}
+.box-table {
+    margin-bottom: 20px;
+}
+
+.box-table-list > li {
+    float: left;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.box-th > li {
+    background: #f2f2f2;
+}
+
+.box-tr > li:first-of-type {
+    font-size: 14px;
+    text-align: justify;
+    text-indent: 2em;
+    max-width: 560px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor:auto;
+}
+
+ .btn-group {
+    border-top: 1px solid #f2f2f2;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+ .btn-group > .layui-input-block {
+    margin: 0 auto;
+}
+
+
+#footer{
+    height: 60px;
+    line-height:60px;
+    background: #333;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+
+}
+
+.float-disable {
+    float: none!important;
+}
+
+.checkbox-group-danger .title{
+    border: 1px solid;
+    border-color: #FF5722!important;
+}
+
+li.title {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.layui-form-checkbox span {
+    font-size: 18px;
+}
+
+body {
+    font-size: 18px;
+}
+
+.box-tr > li:first-of-type {
+    font-size: 18px;
+}
+
+.layui-form-radio * {
+    font-size: 18px;
+}
+
+.multiline-block {
+    line-height: 22px;
+    display: inline-block;
+    text-indent: 0;
+    vertical-align: middle;
+    width: 90%;
+    white-space: normal;
+}
