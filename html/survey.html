@@ -24,7 +24,7 @@
         <form id="surveyForm" class="layui-form clearfix" action="/api/updateSurvey" method="post">
             <input id="surveyId" type="hidden" name="id">
             <div class="layui-form-item" lay-verify="checkGroup">
-                <div class="title"><p>21.贵组织互联网（包括移动互联网）使用受到限制的最主要因素是：</p></div>
+                <div class="title"><p>21.贵组织互联网使用受到限制的最主要因素是：</p></div>
                 <ul class="box">
                     <li><input type="radio" name="internetLimiting" value="未受到限制" title="未受到限制"></li>
                     <li><input type="radio" name="internetLimiting" value="缺乏硬件（如办公地点、电脑、手机设备）"
@@ -141,7 +141,7 @@
 
 
             <div class="layui-form-item subquestion" style="display:none">
-                <div class="title"><p>25.2 贵组织最成功的众筹项目的名称是：</p></div>
+                <div class="title"><p>25.2 贵组织2017年最成功的众筹项目是：</p></div>
                 <div class="box">
                     <label class="layui-form-label">项目名称</label>
                     <div class="layui-input-inline">
@@ -154,7 +154,7 @@
 
 
             <div class="layui-form-item subquestion" style="display:none">
-                <div class="title"><p>25.3 组织通过众筹所得金额总数为多少元：</p></div>
+                <div class="title"><p>25.3 贵组织2017年通过众筹所得金额总数为：</p></div>
                 <div class="box">
                     <div class="layui-form-item">
                         <label class="layui-form-label">金额</label>
@@ -487,7 +487,7 @@
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
                         <li class="title">
-                            <div class="multiline-block">对本组织的能力进行基于数据的分析（使用如NGO2.0地图评级、基金会中心网等工具）</div>
+                            <div class="multiline-block">对本组织的能力进行基于数据的分析（使用如NGO2.0地图评级、灵析等工具具）</div>
                         </li>
                         <li><input type="radio" name="orgAbilityAnalysis" value="从不" title=" "></li>
                         <li><input type="radio" name="orgAbilityAnalysis" value="很少" title=" "></li>
@@ -515,7 +515,7 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title"> 参加过（政府、企业）主办的项目展会、资源对接会</li>
+                        <li class="title"> 参加过政府或企业主办的项目展会、资源对接会</li>
                         <li><input type="radio" name="attendResourcePairMeeting" value="从不" title=" "></li>
                         <li><input type="radio" name="attendResourcePairMeeting" value="很少" title=" "></li>
                         <li><input type="radio" name="attendResourcePairMeeting" value="有时" title=" "></li>
@@ -533,7 +533,7 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title"><div class="multiline-block">使用行业门户网站（NGO2.0地图、中国发展简报等）获取行业资源</div></li>
+                        <li class="title"><div class="multiline-block">使用行业门户网站（NGO2.0地图、中国发展简报、善达网等）获取行业资源</div></li>
                         <li><input type="radio" name="webNgoResource" value="从不" title=" "></li>
                         <li><input type="radio" name="webNgoResource" value="很少" title=" "></li>
                         <li><input type="radio" name="webNgoResource" value="有时" title=" "></li>
@@ -587,7 +587,7 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title"><div class="multiline-block">开网络会议时，使用屏幕分享工具（如QQ群屏幕分享、Joinme等）</div></li>
+                        <li class="title"><div class="multiline-block">开网络会议时，使用屏幕分享工具（如QQ群屏幕分享、Join.me等）</div></li>
                         <li><input type="radio" name="onlineScreenShare" value="从不" title=" "></li>
                         <li><input type="radio" name="onlineScreenShare" value="很少" title=" "></li>
                         <li><input type="radio" name="onlineScreenShare" value="有时" title=" "></li>
@@ -596,20 +596,20 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title">接受过互联网技术培训的员工在组织内做分享</li>
-                        <li><input type="radio" name="trainingShare" value="从不" title=" "></li>
-                        <li><input type="radio" name="trainingShare" value="很少" title=" "></li>
-                        <li><input type="radio" name="trainingShare" value="有时" title=" "></li>
-                        <li><input type="radio" name="trainingShare" value="经常" title=" "></li>
-                    </ul>
-                </div>
-                <div class="layui-form-item" lay-verify="checkGroup">
-                    <ul class=" box-table-list box-tr col-4">
-                        <li class="title">举办组织内部培训</li>
+                        <li class="title">举办组织内部培训（项目培训、财务培训等）</li>
                         <li><input type="radio" name="internalTraining" value="从不" title=" "></li>
                         <li><input type="radio" name="internalTraining" value="很少" title=" "></li>
                         <li><input type="radio" name="internalTraining" value="有时" title=" "></li>
                         <li><input type="radio" name="internalTraining" value="经常" title=" "></li>
+                    </ul>
+                </div>
+                <div class="layui-form-item" lay-verify="checkGroup">
+                    <ul class=" box-table-list box-tr col-4">
+                        <li class="title">接受过外部互联网技术培训的员工在组织内做分享</li>
+                        <li><input type="radio" name="trainingShare" value="从不" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="很少" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="有时" title=" "></li>
+                        <li><input type="radio" name="trainingShare" value="经常" title=" "></li>
                     </ul>
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
@@ -680,17 +680,8 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title">及时更新组织网站/微博/微信公众号</li>
-                        <li><input type="radio" name="ontimeWebUpdate" value="从不" title=" "></li>
-                        <li><input type="radio" name="ontimeWebUpdate" value="很少" title=" "></li>
-                        <li><input type="radio" name="ontimeWebUpdate" value="有时" title=" "></li>
-                        <li><input type="radio" name="ontimeWebUpdate" value="经常" title=" "></li>
-                    </ul>
-                </div>
-                <div class="layui-form-item" lay-verify="checkGroup">
-                    <ul class=" box-table-list box-tr col-4">
                         <li class="title">
-                            <div class="multiline-block"> 通过官方网站、微信、微博或社交网络等方式发布组织项目活动进展</div>
+                            <div class="multiline-block"> 通过自媒体（官方网站、微信、微博、社交网络等方式）发布组织项目活动进展</div>
                         </li>
                         <li><input type="radio" name="snUpdateProjectInfo" value="从不" title=" "></li>
                         <li><input type="radio" name="snUpdateProjectInfo" value="很少" title=" "></li>
@@ -702,7 +693,7 @@
                     <ul class=" box-table-list box-tr col-4">
                         <li class="title">
                             <div class="multiline-block">
-                                主动通过媒体（如头条号、微博头条号、NGOCN、发展简报、公益时报、当地报纸等）发布项目及活动信息
+                                主动通过公共媒体（如头条号、微博头条号、中国发展简报、公益时报、当地报纸等）发布项目及活动信息
                             </div>
                         </li>
                         <li><input type="radio" name="snPublish" value="从不" title=" "></li>
@@ -714,7 +705,7 @@
 
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title">接受媒体（包括网络、报纸和电视）的邀稿或专访</li>
+                        <li class="title">接受国内媒体（包括网络、报纸和电视）的邀稿或专访</li>
                         <li><input type="radio" name="meidaInterview" value="从不" title=" "></li>
                         <li><input type="radio" name="meidaInterview" value="很少" title=" "></li>
                         <li><input type="radio" name="meidaInterview" value="有时" title=" "></li>
@@ -723,7 +714,7 @@
                 </div>
                 <div class="layui-form-item" lay-verify="checkGroup">
                     <ul class=" box-table-list box-tr col-4">
-                        <li class="title">在国外媒体上发布组织或活动信息</li>
+                        <li class="title">接受国外媒体（包括网络、报纸和电视）的邀稿或专访</li>
                         <li><input type="radio" name="foreignMedia" value="从不" title=" "></li>
                         <li><input type="radio" name="foreignMedia" value="很少" title=" "></li>
                         <li><input type="radio" name="foreignMedia" value="有时" title=" "></li>
