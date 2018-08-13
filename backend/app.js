@@ -24,7 +24,125 @@ function initModel() {
             primaryKey: true
         },
         name: Sequelize.STRING(100),
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(20),
+        englishName: {
+            type: Sequelize.STRING(100),
+            field: 'english_name'
+        },
+        byname: Sequelize.STRING(100),
+        email: Sequelize.STRING(100),
+        phone: Sequelize.STRING(50),
+        province: Sequelize.STRING(20),
+        city: Sequelize.STRING(20),
+        county: Sequelize.STRING(20),
+        place: Sequelize.TEXT,
+        weibo: Sequelize.STRING(50),
+        wechat: Sequelize.STRING(50),
+        website: Sequelize.STRING(50),
+        workField: {
+            type: Sequelize.STRING(200),
+            field: 'work_field',
+            get: function () {
+                let val = this.getDataValue('workField');
+                return val ? val.split(',') : null;
+            }
+        },
+        documentedYear: {
+            type: Sequelize.CHAR(4),
+            field: 'documented_year'
+        },
+        documentedMonth: {
+            type: Sequelize.CHAR(4),
+            field: 'documented_month'
+        },
+        registerYear: {
+            type: Sequelize.CHAR(4),
+            field: 'register_year'
+        },
+        registerMonth: {
+            type: Sequelize.CHAR(4),
+            field: 'register_month'
+        },
+        registerType: {
+            type: Sequelize.CHAR(20),
+            field: 'register_type'
+        },
+        projectScale: {
+            type: Sequelize.STRING(100),
+            field: 'project_scale'
+        },
+        serviceArea: {
+            type: Sequelize.STRING(100),
+            field: 'service_area'
+        },
+        staffFulltime: {
+            type: Sequelize.INTEGER,
+            field: 'staff_fulltime'
+        },
+        staffFulltimeRange: {
+            type: Sequelize.STRING(50),
+            field: 'staff_fulltime_range'
+        },
+        staffParttime: {
+            type: Sequelize.INTEGER,
+            field: 'staff_parttime'
+        },
+        staffVolunteer: {
+            type: Sequelize.INTEGER,
+            field: 'staff_volunteer'
+        },
+        orgRules: {
+            type: Sequelize.STRING(100),
+            field: 'org_rules'
+        },
+        hasBoard: {
+            type: Sequelize.INTEGER,
+            field: 'has_board'
+        },
+        accountantSatus: {
+            type: Sequelize.INTEGER,
+            field: 'accountant_status'
+        },
+        leadExperience: {
+            type: Sequelize.STRING(50),
+            field: 'lead_experience'
+        },
+        memberExperience: {
+            type: Sequelize.STRING(50),
+            field: 'member_experience'
+        },
+        govLevel: {
+            type: Sequelize.STRING(20),
+            field: 'gov_level'
+        },
+        hasReward: {
+            type: Sequelize.INTEGER,
+            field: 'has_reward'
+        },
+        rewardDetail: {
+            type: Sequelize.STRING(150),
+            field: 'reward_detail'
+        },
+        participantScale: {
+            type: Sequelize.STRING(100),
+            field: 'participant_scale'
+        },
+        fundInfo: {
+            type: Sequelize.STRING(100),
+            field: 'fund_info'
+        },
+        mediaRport: {
+            type: Sequelize.STRING(100),
+            field: 'media_report'
+        },
+        hasReport: {
+            type: Sequelize.INTEGER,
+            field: 'has_report'
+        },
+        hasPlan: {
+            type: Sequelize.INTEGER,
+            field: 'has_plan'
+        }
     }, {
         tableName: 'user',
         timestamps: false
@@ -485,7 +603,12 @@ function initModel() {
             "type": Sequelize.STRING(10),
             "field": "foreign_media"
         },
-        rating: Sequelize.STRING(10)
+        rating: Sequelize.STRING(10),
+        startTime: Sequelize.DATE,
+        endTime: Sequelize.DATE,
+        ip: Sequelize.STRING(20),
+        os: Sequelize.STRING(20),
+        browser: Sequelize.STRING(50)
     }, {
         tableName: 'survey',
         underscored: true
@@ -502,10 +625,24 @@ async function querySuggestions(ctx, next) {
             },
             type: 'ngo'
         },
+        attributes: ['id', 'name'],
         limit: 10
     });
-    let suggestions = users.map((user) => user.name);
-    ctx.response.body = {suggestions: suggestions};
+    ctx.response.body = {suggestions: users};
+}
+
+async function queryServerTime(ctx, next) {
+    ctx.response.body = {datetime: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')}
+}
+
+async function queryOrgInfo(ctx, next) {
+    let orgId = ctx.query.id;
+    console.log(ctx.request);
+    let org = await model.User.findOne({
+        where: {id: orgId}
+    });
+    console.log(org);
+    ctx.response.body = {orgInfo: org}
 }
 
 const scoreRules = {
@@ -605,6 +742,7 @@ function calcScore(data) {
 
 async function saveSurvey(ctx, next) {
     let data = ctx.request.body;
+    console.log(ctx.request);
     data.rating = calcScore(data)
     console.log(JSON.stringify(data));
     let survey = await model.Survey.create(data);
@@ -627,7 +765,9 @@ async function updateSurvey(ctx, next) {
 }
 
 function initRouters() {
+    router.get('/api/queryServerTime', queryServerTime);
     router.get('/api/querySuggestions', querySuggestions);
+    router.get('/api/queryOrgInfo', queryOrgInfo);
     router.post('/api/saveSurvey', saveSurvey);
     router.post('/api/updateSurvey', updateSurvey);
 }

@@ -2,11 +2,12 @@
 *.iml
 #.idea/workspace.xml
 .idea/**
+*/.idea
 .gradle/**
 
 */build/**
 
-out
+*/out
 
 web/build/**
 
