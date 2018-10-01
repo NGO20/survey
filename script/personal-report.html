@@ -23,21 +23,31 @@
 <body>
   <div class="main">
     <p>${user}，您好，</p>
-    <p>您的机构“${orgName}”在NGO2.0发起的<span style="color: #f47373">第六次中国公益组织互联网使用与传播能力调研</span>中“击败”了全国${totalPercent}参与调研的公益机构，下面是您的机构在各方面上的表现（%数字为超越了百分之多少的公益机构）。所有的排序和数据仅基于调研收集到的数据。这份报告仅针对您的机构，希望对您有用。</p>
-    <p></p>
-    了解行业信息 ${infoLevel}%
-    宣传机构.倡导公益理念 ${aimLevel}%
-    透过互联网获得资源 ${internetResourceLevel}%
+    <p>您的机构“${orgName}”在NGO2.0发起的<span style="color: #f47373">第六次中国公益组织互联网使用与传播能力调研</span>中“击败”了全国${percentileRank}%参与调研的公益机构，下面是您的机构在各方面上的表现（%数字为超越了百分之多少的公益机构）。所有的排序和数据仅基于调研收集到的数据。这份报告仅针对您的机构，希望对您有用。</p>
+    <div>
+    <div>了解行业信息 ${infoLevel}%</div>
+    <div>宣传机构并倡导公益理念 ${aimLevel}%</div>
+    <div>透过互联网获得资源 ${internetResourceLevel}%</div>
+    <div>知识管理和信息管理 ${manageLevel}%</div>
+    <div>利用互联网协作 ${cooperationLevel}%</div>
+    <div>通过数据和分析提升自己 ${analysisLevel}%</div>
+    <div>通过互联网提高透明度公信力 ${internetTrustLevel}%</div>
+    <div>总成绩:西部地区 ${regionLevel}%</div>
+    <div>总成绩:四川省 ${provinceLevel}%</div>
+    <div>总成绩:全部参与机构 ${totalLevel}%</div>
 
-    知识管理和信息管理 ${manageLevel}%
-    利用互联网协作 ${cooperationLevel}%
-    通过数据和分析提升自己 ${analysisLevel}%
-    通过互联网提高透明度公信力 ${internetTrustLevel}%
-    总成绩:西部地区 ${regionLevel}%
-    总成绩:四川省 ${provinceLevel}%
-    总成绩:全部参与机构 ${totalLevel}%
+    </div>
+    <p></p>
     了解行业信息，您可以尝试：
     订阅一些公益机构的电子简报 (${briefingPercent}%的机构正这样做)
+    关注其他公益组织的微信公众号（${}
+访问公益行业信息网站
+订阅了同行的电子简报
+在微博上关注了公益组织
+加入了公益组织QQ／微信群
+通过搜索引擎搜索行业信息
+在线下跟公益同行交流信息
+
     宣传机构.倡导公益理念，您可以尝试：
     在官网提供RSS订阅功能 (${rssPercent}%的机构正这样做)
     举办活动或大型会议时在现场进行微信.微博互动 (${onlineChatPercent}%的机构正这样做)
